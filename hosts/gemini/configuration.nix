@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   networking.hostName = "gemini";
 
@@ -34,6 +34,7 @@
 
   users.users.vendama = {
     extraGroups = [ "wheel" "networkmanager" ];
+    isNormalUser = true;
   };
 
   services.xserver.xkb.layout = "de";
@@ -43,14 +44,6 @@
 
   services.printing.enable = true;
 
-  # Enable pipewire. Technically not required when a desktopManager is enabled.
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
   hardware.steam-hardware.enable = true;
-  hardwaare.xone.enable = true;
   hardware.graphics.enable32Bit = true;
 }

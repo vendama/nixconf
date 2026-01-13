@@ -21,6 +21,7 @@
               size = "2G";
               type = "ef02";
               content = {
+                type = "filesystem";
                 format = "ext4";
                 mountpoint = "/boot";
               };
