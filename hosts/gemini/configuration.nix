@@ -25,6 +25,14 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
+  environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.falkon
+  ];
+
   services.fwupd.enable = true;
 
   zramSwap = {
