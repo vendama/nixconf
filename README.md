@@ -24,7 +24,7 @@ passwd nixos
 6. Get the disko configuration for the host and save it to /tmp/disko.nix
 (in this example for host gemini)
 ```
-curl -LO https://raw.githubusercontent.com/vendama/nixconf/hosts/gemini/disko.nix
+curl -LO https://raw.githubusercontent.com/vendama/nixconf/refs/heads/master/hosts/gemini/disko.nix
 ```
 8. Run disko
 ```
