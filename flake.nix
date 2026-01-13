@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +34,7 @@
               useUserPackages = true;
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
 
-              users.vendama = ./mercury/home.nix;
+              users.vendama = ./hosts/mercury/home.nix;
             };
           }
           {
@@ -63,7 +64,7 @@
               useUserPackages = true;
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
 
-              users.vendama = ./mercury/home.nix;
+              #users.vendama = ./hosts/gemini/home.nix;
             };
           }
           {
