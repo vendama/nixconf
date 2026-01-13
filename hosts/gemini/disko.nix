@@ -8,22 +8,13 @@
           type = "gpt";
           partitions = {
             ESP = {
-              size = "512M";
+              size = "1G";
               type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
-                mountpoint = "/boot/efi";
-                mountOptions = [ "umask=0077" ];
-              };
-            };
-            boot = {
-              size = "2G";
-              type = "ef02";
-              content = {
-                type = "filesystem";
-                format = "ext4";
                 mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
               };
             };
             luks = {
