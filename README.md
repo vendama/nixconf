@@ -58,15 +58,13 @@ sudo nixos-install --root /mnt --flake /mnt/etc/nixos#host-CHANGEME
 ```
 13. Set user password
 ```
-sudo nixos-enter
 # in this example the vendama user
-passwd vendama
-exit
+sudo nixos-enter -c 'passwd vendama'
 ```
 14. Reboot into system
 15. Post install
 log in as user
-clone the repo into home **TODO because: repo doesn't exist**
+clone the repo into home
 ```
 git clone https://github.com/vendama/nixconf.git ~/nixconf
 # Remove old nix files WARNING: Destructive
