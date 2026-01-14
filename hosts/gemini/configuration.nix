@@ -50,6 +50,9 @@
   users.users.vendama = {
     extraGroups = [ "wheel" "networkmanager" ];
     isNormalUser = true;
+    packages = with pkgs; [
+      element-desktop
+    ];
   };
 
   services.xserver.xkb.layout = "de";
