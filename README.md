@@ -69,7 +69,7 @@ clone the repo into home
 git clone https://github.com/vendama/nixconf.git ~/nixconf
 # Remove old nix files WARNING: Destructive
 sudo rm -rf /etc/nixos/*
-# Rebuild with the rebuild script to manage properly
-cd ~/nixconf
-./rebuild
+
+# From now on rebuild with
+sudo nixos-rebuild switch --flake ~/nixconf
 ```
