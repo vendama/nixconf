@@ -64,7 +64,7 @@
               useUserPackages = true;
               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
 
-              #users.vendama = ./hosts/gemini/home.nix;
+              users.vendama = ./hosts/gemini/home.nix;
             };
           }
           {
