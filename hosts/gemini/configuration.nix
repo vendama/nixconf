@@ -67,6 +67,6 @@
   hardware.steam-hardware.enable = true;
   hardware.graphics.enable32Bit = true;
 
-  programs.gpu-screen-recorder = true;
+  #programs.gpu-screen-recorder = true;
   programs.gpu-screen-recorder-ui.enable = true;
 }
