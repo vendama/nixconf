@@ -52,6 +52,7 @@
     isNormalUser = true;
     packages = with pkgs; [
       element-desktop
+      prismlauncher
     ];
   };
 
