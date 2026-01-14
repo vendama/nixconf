@@ -12,15 +12,15 @@
       OfferToSaveLogins = false;
 
       FirefoxHome = {
-        Locked = true;
         Search = true;
         TopSites = false;
-        SponsoredSites = false;
+        SponsoredTopSites = false;
         Highlights = false;
         Pocket = false;
         Stories = false;
         SponsoredPocket = false;
         SponsoredStories = false;
+        Locked = true;
       };
 
       GenerativeAI = {
@@ -52,10 +52,9 @@
         Locked = true;
       };
 
-      SearchEngines = {
-        Default = "DuckDuckGo";
-      };
+      SearchEngines.Default = "DuckDuckGo";
 
+      BlockAboutAddons = true;
       BlockAboutConfig = true;
 
       ExtensionSettings = {
@@ -65,13 +64,8 @@
           installation_mode = "force_installed";
           private_browsing = true;
         };
-        "addon@darkreader.org" = {
-          default_area = "menupanel";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-          installation_mode = "force_installed";
-          private_browsing = true;
-        };
       };
+      InstallAddonsPermission.Default = false;
       "3rdparty".Extensions."uBlock0@raymondhill.net".toOverwrite.filterLists = [
         # Default uBo filters
         "user-filters"
@@ -90,12 +84,6 @@
         "ublock-cookies-easylist" # uBlock filters - Cookie Notices
         "adguard-cookies" # AdGuard - Cookie Notices
         "ublock-cookies-adguard" # uBlock filters - Cookie Notices
-        # Additional: Annoyances
-        "easylist-chat" # EasyList - Chat Widgets
-        "easylist-newsletters" # EasyList - Newsletter Notices
-        "easylist-notifications" # EasyList - Notifications
-        "easylist-annoyances" # EasyList - Other Annoyances
-        "ublock-annoyances" # uBlock filters - Annoyances
       ];
     };
   };

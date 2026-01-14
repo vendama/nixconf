@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ../../shared/home/firefox.nix
+  ];
+
   programs.plasma = {
     enable = true;
     session.sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
