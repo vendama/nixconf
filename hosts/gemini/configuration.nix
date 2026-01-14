@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   networking.hostName = "gemini";
 
@@ -25,6 +25,11 @@
     ];
   };
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-unwrapped"
+  ];
+
   environment.systemPackages = with pkgs; [
     git
   ];
@@ -32,6 +37,8 @@
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.falkon
   ];
+
+  programs.steam.enable = true;
 
   services.fwupd.enable = true;
 
