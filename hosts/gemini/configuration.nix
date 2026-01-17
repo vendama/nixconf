@@ -54,6 +54,7 @@
     packages = with pkgs; [
       element-desktop
       prismlauncher
+      vesktop
     ];
   };
 
