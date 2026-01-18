@@ -17,21 +17,11 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            boot = {
-              size = "2G";
-              type = "ef02";
-              content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/boot";
-              };
-            };
             luks = {
               size = "100%";
               content = {
                 type = "luks";
                 name = "cryptroot";
-                # 
                 extraFormatArgs = [ "--key-size 512" "--hash sha512" ];
                 extraOpenArgs = [ ];
                 settings = {
