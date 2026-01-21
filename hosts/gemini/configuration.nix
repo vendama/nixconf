@@ -37,6 +37,7 @@
 
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.falkon
+    kdePackages.konsole
   ];
 
   programs.steam.enable = true;
@@ -57,6 +58,11 @@
       element-desktop
       prismlauncher
       vesktop
+
+      ghostty
+      nerd-fonts.iosevka-term
+      tmux
+      neovim
     ];
   };
 

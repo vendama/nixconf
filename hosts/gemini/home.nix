@@ -21,9 +21,15 @@
         productId = "c547";
       }
     ];
+    shortcuts = {
+      "services/Ghostty.desktop"."_launch[$i]" = "Ctrl+Alt+T";
+    };
     configFile = {
       # 2x faster animations
       kdeglobals.KDE.AnimationDurationFactor = 0.5;
+
+      kdeglobals.General.TerminalApplication = "ghostty";
+      kdeglobals.General.TerminalService = "Ghostty.desktop";
     };
 
     immutableByDefault = true;
