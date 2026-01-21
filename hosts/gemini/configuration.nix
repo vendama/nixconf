@@ -44,8 +44,6 @@
 
   programs.steam.enable = true;
 
-  services.fwupd.enable = true;
-
   zramSwap = {
     enable = true;
     memoryPercent = 100;
