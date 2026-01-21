@@ -52,6 +52,8 @@
     extraGroups = [ "wheel" "networkmanager" ];
     isNormalUser = true;
     packages = with pkgs; [
+      kdePackages.kclock
+      kdePackages.dragon
       element-desktop
       prismlauncher
       vesktop
