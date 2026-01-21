@@ -21,6 +21,10 @@
         productId = "c547";
       }
     ];
+    configFile = {
+      # 2x faster animations
+      kdeglobals.KDE.AnimationDurationFactor = 0.5;
+    };
 
     immutableByDefault = true;
   };
