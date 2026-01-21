@@ -16,13 +16,15 @@
     initrd.systemd.enable = true; # Also use plymouth for password prompt
     initrd.verbose = false;
     kernelPackages = pkgs.linuxPackages_latest; # Use latest instead of lts
-    # Quiet graphics boot
     kernelParams = [
+      # Quiet graphics boot
       "quiet"
       "loglevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      # Enable AMD GPU overclocking
+      "amdgpu.ppfeaturemask=0xffffffff"
     ];
   };
 
@@ -78,4 +80,10 @@
 
   #programs.gpu-screen-recorder = true;
   programs.gpu-screen-recorder-ui.enable = true;
+
+  services.lact.enable = true;
+  environment.etc."lact/config.yaml".source = pkgs.writeTextFile {
+    name = "config.yaml";
+    text = builtins.readFile ./lact-config.yaml;
+  };
 }
