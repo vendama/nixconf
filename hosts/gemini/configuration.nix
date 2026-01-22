@@ -23,8 +23,6 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      # Enable AMD GPU overclocking
-      "amdgpu.ppfeaturemask=0xffffffff"
     ];
   };
 
@@ -79,6 +77,11 @@
   #programs.gpu-screen-recorder = true;
   programs.gpu-screen-recorder-ui.enable = true;
 
+  # Load GPU early
+  hardware.amdgpu.initrd.enable = true;
+
+  # Enable overclocking
+  hardware.amdgpu.overdrive.enable = true;
   services.lact.enable = true;
   environment.etc."lact/config.yaml".source = pkgs.writeTextFile {
     name = "config.yaml";
