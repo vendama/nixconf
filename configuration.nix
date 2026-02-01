@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, ... }:
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -8,6 +8,10 @@
   i18n.extraLocaleSettings = {
     LC_TIME = "en_GB.UTF-8";
   };
+
+  environment.systemPackages = with pkgs; [
+    alejandra
+  ];
 
   nix.optimise.automatic = true;
   nix.settings.auto-optimise-store = true;
