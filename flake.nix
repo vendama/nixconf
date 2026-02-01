@@ -10,13 +10,8 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, plasma-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
     nixosConfigurations.mercury = nixpkgs.lib.nixosSystem
       {
         system = "x86_64-linux";
@@ -32,7 +27,6 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = [ plasma-manager.homeModules.plasma-manager ];
 
               users.vendama = ./hosts/mercury/home.nix;
             };
@@ -62,7 +56,6 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              sharedModules = [ plasma-manager.homeModules.plasma-manager ];
 
               users.vendama = ./hosts/gemini/home.nix;
             };
