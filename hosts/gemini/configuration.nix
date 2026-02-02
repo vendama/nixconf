@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   networking.hostName = "gemini";
 
   imports = [
@@ -26,10 +29,11 @@
     ];
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-unwrapped"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-unwrapped"
+    ];
 
   environment.systemPackages = with pkgs; [
     git
@@ -48,7 +52,7 @@
   };
 
   users.users.vendama = {
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = ["wheel" "networkmanager"];
     isNormalUser = true;
     packages = with pkgs; [
       kdePackages.kclock
@@ -65,9 +69,13 @@
   };
 
   services.xserver.xkb.layout = "de";
-  console.keyMap = "de-nodeadkeys"; services.displayManager.sddm = { enable = true; wayland.enable = true; };
+  console.keyMap = "de-nodeadkeys";
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
   services.desktopManager.plasma6.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
 
   services.printing.enable = true;
 

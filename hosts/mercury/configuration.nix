@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   networking.hostName = "mercury";
 
   boot = {
@@ -17,7 +16,7 @@
   };
 
   users.users.vendama = {
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = ["wheel" "networkmanager"];
     isNormalUser = true;
   };
 

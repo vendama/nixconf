@@ -11,11 +11,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
-    nixosConfigurations.mercury = nixpkgs.lib.nixosSystem
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    ...
+  } @ inputs: {
+    nixosConfigurations.mercury =
+      nixpkgs.lib.nixosSystem
       {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           inputs.disko.nixosModules.disko
           ./configuration.nix
@@ -41,10 +48,11 @@
           }
         ];
       };
-    nixosConfigurations.gemini = nixpkgs.lib.nixosSystem
+    nixosConfigurations.gemini =
+      nixpkgs.lib.nixosSystem
       {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           inputs.disko.nixosModules.disko
           ./configuration.nix

@@ -3,18 +3,15 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.programs.gpu-screen-recorder-ui;
   package = cfg.package.override {
     inherit (config.security) wrapperDir;
   };
-in
-{
+in {
   options = {
     programs.gpu-screen-recorder-ui = {
-      package = lib.mkPackageOption pkgs "gpu-screen-recorder-ui" { };
+      package = lib.mkPackageOption pkgs "gpu-screen-recorder-ui" {};
 
       enable = lib.mkOption {
         type = lib.types.bool;
@@ -30,9 +27,9 @@ in
   config = lib.mkIf cfg.enable {
     programs.gpu-screen-recorder.enable = lib.mkDefault true;
 
-    environment.systemPackages = [ package ];
+    environment.systemPackages = [package];
 
-    systemd.packages = [ package ];
+    systemd.packages = [package];
 
     security.wrappers."gsr-global-hotkeys" = {
       owner = "root";
@@ -42,5 +39,5 @@ in
     };
   };
 
-  meta.maintainers = with lib.maintainers; [ js6pak ];
+  meta.maintainers = with lib.maintainers; [js6pak];
 }

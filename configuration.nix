@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+{pkgs, ...}: {
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   time.timeZone = "CET";
 

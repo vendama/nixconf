@@ -14,7 +14,7 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot/efi";
-                mountOptions = [ "umask=0077" ];
+                mountOptions = ["umask=0077"];
               };
             };
             luks = {
@@ -22,8 +22,8 @@
               content = {
                 type = "luks";
                 name = "cryptroot";
-                extraFormatArgs = [ "--key-size 512" "--hash sha512" ];
-                extraOpenArgs = [ ];
+                extraFormatArgs = ["--key-size 512" "--hash sha512"];
+                extraOpenArgs = [];
                 settings = {
                   # By not using keyFile you enter password on disko format
                   #keyFile = "/tmp/secret.key";

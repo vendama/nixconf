@@ -22,7 +22,6 @@
   wrapperDir ? "/run/wrappers/bin",
   gitUpdater,
 }:
-
 stdenv.mkDerivation rec {
   pname = "gpu-screen-recorder-ui";
   version = "1.8.3";
@@ -68,31 +67,29 @@ stdenv.mkDerivation rec {
     (lib.mesonBool "capabilities" false)
   ];
 
-  postInstall =
-    let
-      gpu-screen-recorder-wrapped = gpu-screen-recorder.override {
-        inherit wrapperDir;
-      };
-    in
-    ''
-      wrapProgram "$out/bin/${meta.mainProgram}" \
-        --prefix PATH : "${wrapperDir}" \
-        --suffix PATH : "${
-          lib.makeBinPath [
-            gpu-screen-recorder-wrapped
-            gpu-screen-recorder-notification
-          ]
-        }"
-    '';
+  postInstall = let
+    gpu-screen-recorder-wrapped = gpu-screen-recorder.override {
+      inherit wrapperDir;
+    };
+  in ''
+    wrapProgram "$out/bin/${meta.mainProgram}" \
+      --prefix PATH : "${wrapperDir}" \
+      --suffix PATH : "${
+      lib.makeBinPath [
+        gpu-screen-recorder-wrapped
+        gpu-screen-recorder-notification
+      ]
+    }"
+  '';
 
-  passthru.updateScript = gitUpdater { };
+  passthru.updateScript = gitUpdater {};
 
   meta = {
     description = "Fullscreen overlay UI for GPU Screen Recorder in the style of ShadowPlay";
     homepage = "https://git.dec05eba.com/gpu-screen-recorder-ui/about/";
     license = lib.licenses.gpl3Only;
     mainProgram = "gsr-ui";
-    maintainers = with lib.maintainers; [ js6pak ];
+    maintainers = with lib.maintainers; [js6pak];
     platforms = lib.platforms.linux;
   };
 }
