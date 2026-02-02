@@ -7,7 +7,6 @@
 
   imports = [
     ./hardware-configuration.nix
-    ./gpu-screen-recorder-ui/gpu-screen-recorder-ui.nix # Copied from pr 369574
   ];
 
   boot = {
@@ -58,7 +57,6 @@
       kdePackages.kclock
       kdePackages.dragon
       element-desktop
-      prismlauncher
       vesktop
 
       ghostty
@@ -81,9 +79,6 @@
 
   hardware.steam-hardware.enable = true;
   hardware.graphics.enable32Bit = true;
-
-  #programs.gpu-screen-recorder = true;
-  programs.gpu-screen-recorder-ui.enable = true;
 
   # Load GPU early
   hardware.amdgpu.initrd.enable = true;

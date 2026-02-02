@@ -72,8 +72,6 @@
             nixpkgs.overlays = [
               (final: prev: {
                 unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-                gpu-screen-recorder-notification = prev.callPackage ./pkgs/gpu-screen-recorder-notification.nix {}; # Required for ui
-                gpu-screen-recorder-ui = prev.callPackage ./pkgs/gpu-screen-recorder-ui.nix {};
               })
             ];
           }
