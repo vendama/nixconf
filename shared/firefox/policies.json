@@ -1,0 +1,130 @@
+{
+  "policies": {
+    "DisableFeedbackCommands": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisableFormHistory": true,
+    "DisableMasterPasswordCreation": true,
+    "DisableTelemetry": true,
+    "DontCheckDefaultBrowser": false,
+    "EnableTrackingProtection": {
+      "Value": true,
+      "Locked": true,
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "EmailTracking": true,
+      "SuspectedFingerprinting": true,
+      "Category": "strict",
+      "BaselineExceptions": true,
+      "ConvenienceExceptions": true
+    },
+    "EncryptedMediaExtensions": {
+      "Enabled": false,
+      "Locked": true
+    },
+    "ExtensionSettings": {
+      "uBlock0@raymondhill.net": {
+        "default_area": "menupanel",
+        "installation_mode": "force_installed",
+	"install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+	"private_browsing": true
+      }
+    },
+    "3rdparty": {
+      "Extensions": {
+        "uBlock0@raymondhill.net": {
+          "toOverwrite": {
+            "filterLists": [
+              "user-filters",
+              "ublock-filters",
+              "ublock-badware",
+              "ublock-privacy",
+              "ublock-abuse",
+              "ublock-quick-fixes",
+              "ublock-unbreak",
+              "easylist",
+              "easyprivacy",
+              "urlhaus-1",
+              "plowe-0",
+              "fanboy-cookiemonster",
+              "ublock-cookies-easylist",
+              "adguard-cookies",
+              "ublock-cookies-adguard"
+            ]
+          }
+        }
+      }
+    },
+    "FirefoxHome": {
+      "Search": true,
+      "TopSites": false,
+      "SponsoredTopSites": false,
+      "Highlights": false,
+      "Pocket": false,
+      "SponsoredPocket": false,
+      "Snippets": false,
+      "Locked": true
+    },
+    "FirefoxSuggest": {
+      "WebSuggestions": false,
+      "SponsoredSuggestions": false,
+      "ImproveSuggest": false,
+      "Locked": true
+    },
+    "GenerativeAI": {
+      "Enabled": false,
+      "Chatbot": false,
+      "LinkPreviews": false,
+      "TabGroups": false,
+      "Locked": true
+    },
+    "HardwareAcceleration": true,
+    "Homepage": {
+      "Locked": true,
+      "StartPage": "homepage-locked"
+    },
+    "NoDefaultBookmarks": true,
+    "OfferToSaveLogins": false,
+    "PasswordManagerEnabled": false,
+
+    "PictureInPicture": {
+      "Enabled": true,
+      "Locked": true
+    },
+    "Preferences": {
+      "browser.urlbar.scotchBonnet.enableOverride": false,
+      "browser.urlbar.suggest.engines": false,
+      "browser.urlbar.suggest.topsites": false,
+      "extensions.formautofill.addresses.enabled": false,
+      "extensions.formautofill.creditCards.enabled": false
+    },
+    "SearchEngines": {
+      "Add": [
+        {
+          "Name": "Startpage",
+          "URLTemplate": "https://www.startpage.com/sp/search?query=%s",
+          "IconURL": "https://www.startpage.com/favicon.ico",
+          "SuggestURLTemplate": "https://www.startpage.com/osuggestions?q=%s"
+        }
+      ],
+      "Default": "DuckDuckGo",
+      "Remove": [
+        "Bing",
+        "Google",
+        "Perplexity"
+      ]
+    },
+    "SearchSuggestEnabled": false,
+    "ShowHomeButton": false,
+    "SkipTermsOfUse": true,
+    "UserMessaging": {
+      "ExtensionRecommendations": false,
+      "FeatureRecommendations": false,
+      "UrlbarInterventions": false,
+      "SkipOnboarding": true,
+      "MoreFromMozilla": false,
+      "FirefoxLabs": false,
+      "Locked": true
+    }
+  }
+}

@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ../../shared/home/firefox.nix
   ];
 
   # Fix Steam not using breeze cursor

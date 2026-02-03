@@ -1,6 +1,10 @@
 {pkgs, ...}: {
   networking.hostName = "mercury";
 
+  imports = [
+    ../../shared/firefox
+  ];
+
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
