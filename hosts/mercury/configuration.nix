@@ -8,10 +8,15 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    loader.timeout = 1;
+    loader.timeout = 0;
 
     plymouth.enable = true;
-    initrd.systemd.enable = true; # Also use plymouth for password prompt
+    initrd.systemd.enable = true;
+    initrd.verbose = false;
+    consoleLogLevel = 0;
+    kernelParams = [
+      "quiet"
+    ];
   };
 
   zramSwap = {

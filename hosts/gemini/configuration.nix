@@ -13,19 +13,15 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    loader.timeout = 0; # Hold button to access boot menu
+    loader.timeout = 0;
 
     plymouth.enable = true;
-    initrd.systemd.enable = true; # Also use plymouth for password prompt
+    initrd.systemd.enable = true;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.verbose = false;
-    kernelPackages = pkgs.linuxPackages_latest; # Use latest instead of lts
+    consoleLogLevel = 0;
     kernelParams = [
-      # Quiet graphics boot
       "quiet"
-      "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
     ];
   };
 
