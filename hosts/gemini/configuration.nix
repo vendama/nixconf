@@ -56,6 +56,9 @@
       element-desktop
       vesktop
 
+      zed-editor
+      clang-tools
+      nil
       ghostty
       nerd-fonts.iosevka-term
       tmux
