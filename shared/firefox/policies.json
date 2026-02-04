@@ -6,7 +6,7 @@
     "DisableFormHistory": true,
     "DisableMasterPasswordCreation": true,
     "DisableTelemetry": true,
-    "DontCheckDefaultBrowser": false,
+    "DontCheckDefaultBrowser": true,
     "EnableTrackingProtection": {
       "Value": true,
       "Locked": true,
@@ -88,7 +88,7 @@
     "PasswordManagerEnabled": false,
 
     "PictureInPicture": {
-      "Enabled": true,
+      "Enabled": false,
       "Locked": true
     },
     "Preferences": {
