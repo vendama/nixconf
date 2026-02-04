@@ -67,7 +67,7 @@
   };
 
   services.xserver.xkb.layout = "de";
-  console.keyMap = "de-nodeadkeys";
+  console.keyMap = "de-latin1-nodeadkeys";
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
