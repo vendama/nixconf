@@ -27,20 +27,26 @@
   users.users.vendama = {
     extraGroups = ["wheel" "networkmanager"];
     isNormalUser = true;
+    packages = with pkgs; [
+      ghostty
+      mission-center
+    ];
   };
-
-  environment.systemPackages = with pkgs; [
-    kdePackages.kclock # Clock and timer app for kde
-  ];
 
   services.xserver.xkb.layout = "de";
   console.keyMap = "de-latin1-nodeadkeys";
 
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    yelp
+    epiphany
+    geary
+    gnome-console
+    gnome-system-monitor
+  ];
+  services.xserver.excludePackages = [pkgs.xterm];
 
   hardware.bluetooth.enable = true;
 
