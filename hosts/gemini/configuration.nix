@@ -32,7 +32,6 @@
     ];
 
   environment.systemPackages = with pkgs; [
-    git
   ];
 
   environment.plasma6.excludePackages = with pkgs; [

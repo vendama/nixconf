@@ -10,6 +10,7 @@
 
   environment.systemPackages = with pkgs; [
     alejandra
+    git
   ];
 
   nix.optimise.automatic = true;
