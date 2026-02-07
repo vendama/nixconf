@@ -102,12 +102,16 @@
       "Add": [
         {
           "Name": "Startpage",
-          "URLTemplate": "https://www.startpage.com/sp/search?query=%s",
-          "IconURL": "https://www.startpage.com/favicon.ico",
-          "SuggestURLTemplate": "https://www.startpage.com/osuggestions?q=%s"
-        }
+          "URLTemplate": "https://www.startpage.com/sp/search?query={searchTerms}",
+          "IconURL": "https://www.startpage.com/favicon.ico"
+        },
+        {
+          "Name": "DuckDuckGoNOAI",
+	  "URLTemplate": "https://noai.duckduckgo.com?q={searchTerms}",
+	  "IconURL": "https://noai.duckduckgo.com/favicon.ico"
+	}
       ],
-      "Default": "DuckDuckGo",
+      "Default": "DuckDuckGoNOAI",
       "Remove": [
         "Bing",
         "Google",

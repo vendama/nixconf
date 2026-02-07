@@ -1,20 +1,8 @@
-# My Nix Configurations
+# Nix Configurations
 Config files for all my Nix machines.
 ## Installation Guide
-Install minimal ISO from the [nixos website](https://nixos.org)
-Flash the ISO to a USB
-```bash
-# Example, version will differ
-sudo dd if=~/Downloads/nixos-minimal-25.11.2518.5900a0a8850c-x86_64-linux.iso of=/dev/sdX status = progress
-```
-Boot the ISO on the desired device.
-(Optional if using SSH)Set the password on the live iso(keyboard and display are required)
-```bash
-passwd nixos
-```
-Now SSH in or continue in the console.
+Flash & Boot the ISO.
 Get the disko configuration for the host and save it to /tmp/disko.nix
-(in this example for host gemini)
 ```bash
 curl https://raw.githubusercontent.com/vendama/nixconf/refs/heads/master/hosts/gemini/disko.nix -o /tmp/disko.nix
 ```
