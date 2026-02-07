@@ -27,7 +27,6 @@
           inputs.disko.nixosModules.disko
           ./configuration.nix
           ./hosts/mercury/configuration.nix
-          ./hosts/mercury/hardware-configuration.nix
           ./hosts/mercury/disko.nix
           home-manager.nixosModules.home-manager
           {
@@ -57,7 +56,6 @@
           inputs.disko.nixosModules.disko
           ./configuration.nix
           ./hosts/gemini/configuration.nix
-          ./hosts/gemini/hardware-configuration.nix
           ./hosts/gemini/disko.nix
           home-manager.nixosModules.home-manager
           {

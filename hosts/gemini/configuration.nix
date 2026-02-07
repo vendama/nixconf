@@ -7,6 +7,7 @@
 
   imports = [
     ./hardware-configuration.nix
+    ../../shared/dnscrypt-proxy.nix
     ../../shared/firefox
   ];
 
